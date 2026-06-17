@@ -52,18 +52,18 @@ export function CarouselSection({ category, products }: CarouselSectionProps) {
       {/* Navigation Arrows */}
       <button 
         onClick={() => scroll('left')}
-        className={`hidden sm:flex absolute left-2 sm:-left-5 top-[60%] -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-forest-800 border border-white/20 text-white items-center justify-center shadow-2xl transition-all duration-300 hover:bg-forest-700 hover:scale-110 ${canScrollLeft ? 'opacity-100 sm:opacity-0 sm:group-hover/section:opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`absolute left-1 sm:-left-5 top-[60%] -translate-y-1/2 z-30 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-forest-800/90 backdrop-blur-sm border border-white/20 text-white flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all duration-300 hover:bg-forest-700 hover:scale-110 ${canScrollLeft ? 'opacity-100 sm:opacity-0 sm:group-hover/section:opacity-100' : 'opacity-0 pointer-events-none'}`}
         aria-label="Scroll left"
       >
-        <ChevronLeft size={24} />
+        <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
       
       <button 
         onClick={() => scroll('right')}
-        className={`hidden sm:flex absolute right-2 sm:-right-5 top-[60%] -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-forest-800 border border-white/20 text-white items-center justify-center shadow-2xl transition-all duration-300 hover:bg-forest-700 hover:scale-110 ${canScrollRight ? 'opacity-100 sm:opacity-0 sm:group-hover/section:opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`absolute right-1 sm:-right-5 top-[60%] -translate-y-1/2 z-30 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-forest-800/90 backdrop-blur-sm border border-white/20 text-white flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all duration-300 hover:bg-forest-700 hover:scale-110 ${canScrollRight ? 'opacity-100 sm:opacity-0 sm:group-hover/section:opacity-100' : 'opacity-0 pointer-events-none'}`}
         aria-label="Scroll right"
       >
-        <ChevronRight size={24} />
+        <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
 
       {/* Horizontal Scrolling Carousel */}
