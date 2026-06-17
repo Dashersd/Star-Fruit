@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest-900: #07100c;
+  --color-forest-800: #0a140f;
+  --color-forest-700: #0d1c14;
+  --color-forest-600: #101f18;
+  --color-forest-500: #11241a;
+  
+  --color-gold: #f0c97a;
+  --color-gold-deep: #d48c3a;
+  --color-gold-bronze: #b8792e;
+  --color-gold-pale: #f7dca4;
+  --color-gold-muted: #d7be91;
+  
+  --color-sf-300: #8cd2b3;
+  --color-sf-400: #56bd91;
+  --color-sf-500: #00a87e;
+  --color-sf-700: #007d5e;
+  
+  --color-ink-white: #ffffff;
+  --color-ink-200: #c0d0c7;
+  --color-ink-300: #a6bbaf;
+  --color-ink-500: #7a9286;
+  
+  --color-amber: #ff8c00;
+  --color-amber-2: #fb923c;
+  --color-rust: #e0824a;
+  --color-pen-red: #e8674c;
+}
+
+@layer base {
+  :root {
+    --background: #0F2018;
+    --foreground: #ffffff;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    /* Improve font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+@layer utilities {
+  .bg-premium-gradient {
+    background: #0F2018;
+  }
+  
+  .glass-panel {
+    background: linear-gradient(180deg, rgba(13, 28, 20, 0.7), rgba(8, 16, 11, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+  }
+
+  @keyframes premiumPulse {
+    0% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(240,201,122,0)); }
+    50% { transform: scale(1.08); filter: drop-shadow(0 0 12px rgba(240,201,122,0.6)); }
+    100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(240,201,122,0)); }
+  }
+
+  .animate-logo {
+    animation: premiumPulse 4s ease-in-out infinite;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  @keyframes cartShake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    50% { transform: rotate(15deg); }
+    75% { transform: rotate(-15deg); }
+  }
+
+  .animate-cart-shake {
+    animation: cartShake 0.4s ease-in-out;
+  }
+}
