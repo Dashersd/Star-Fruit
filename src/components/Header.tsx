@@ -23,11 +23,11 @@ export function Header() {
   }, [totalItems]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-forest-900/60 backdrop-blur-xl border-b border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+    <header className="sticky top-0 z-50 w-full bg-forest-900/60 backdrop-blur-xl border-b border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.1)] flex flex-col">
       {/* Top glowing rule */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold-bronze to-transparent opacity-50"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 w-full flex items-center justify-between relative z-10">
         <Link href="/" className="flex items-center gap-2 sm:gap-3 group max-w-[75%]">
           <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl overflow-hidden flex items-center justify-center shadow-lg group-hover:border-gold transition-colors bg-forest-900 shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -38,7 +38,7 @@ export function Header() {
           </span>
         </Link>
         
-        {/* Global Search Bar */}
+        {/* Global Search Bar (Desktop) */}
         <div className="hidden md:flex flex-1 max-w-xl mx-8 relative">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-500" size={16} />
           <input 
@@ -61,6 +61,20 @@ export function Header() {
             </span>
           )}
         </Link>
+      </div>
+
+      {/* Mobile Search Bar */}
+      <div className="md:hidden px-4 pb-4 w-full relative z-10">
+        <div className="relative">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-500" size={16} />
+          <input 
+            type="text" 
+            placeholder="Search ingredients..." 
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full bg-forest-800/50 border border-white/10 rounded-full py-2.5 pl-10 pr-4 text-white placeholder:text-ink-500 text-sm focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all"
+          />
+        </div>
       </div>
     </header>
   );
