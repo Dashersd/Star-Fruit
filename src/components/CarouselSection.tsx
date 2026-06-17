@@ -52,7 +52,7 @@ export function CarouselSection({ category, products }: CarouselSectionProps) {
       {/* Navigation Arrows */}
       <button 
         onClick={() => scroll('left')}
-        className={`absolute left-2 sm:-left-5 top-[60%] -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-forest-800 border border-white/20 text-white flex items-center justify-center shadow-2xl transition-all duration-300 hover:bg-forest-700 hover:scale-110 ${canScrollLeft ? 'opacity-100 sm:opacity-0 sm:group-hover/section:opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`hidden sm:flex absolute left-2 sm:-left-5 top-[60%] -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-forest-800 border border-white/20 text-white items-center justify-center shadow-2xl transition-all duration-300 hover:bg-forest-700 hover:scale-110 ${canScrollLeft ? 'opacity-100 sm:opacity-0 sm:group-hover/section:opacity-100' : 'opacity-0 pointer-events-none'}`}
         aria-label="Scroll left"
       >
         <ChevronLeft size={24} />
@@ -60,7 +60,7 @@ export function CarouselSection({ category, products }: CarouselSectionProps) {
       
       <button 
         onClick={() => scroll('right')}
-        className={`absolute right-2 sm:-right-5 top-[60%] -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-forest-800 border border-white/20 text-white flex items-center justify-center shadow-2xl transition-all duration-300 hover:bg-forest-700 hover:scale-110 ${canScrollRight ? 'opacity-100 sm:opacity-0 sm:group-hover/section:opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`hidden sm:flex absolute right-2 sm:-right-5 top-[60%] -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-forest-800 border border-white/20 text-white items-center justify-center shadow-2xl transition-all duration-300 hover:bg-forest-700 hover:scale-110 ${canScrollRight ? 'opacity-100 sm:opacity-0 sm:group-hover/section:opacity-100' : 'opacity-0 pointer-events-none'}`}
         aria-label="Scroll right"
       >
         <ChevronRight size={24} />
@@ -70,10 +70,10 @@ export function CarouselSection({ category, products }: CarouselSectionProps) {
       <div 
         ref={scrollRef}
         onScroll={checkScroll}
-        className="flex overflow-x-auto gap-6 lg:gap-8 pb-8 pt-2 snap-x snap-mandatory hide-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth"
+        className="flex overflow-x-auto gap-4 sm:gap-6 lg:gap-8 pb-8 pt-2 snap-x snap-mandatory hide-scrollbar -mx-4 px-[calc(50vw-140px)] sm:mx-0 sm:px-0 scroll-smooth"
       >
         {products.map((product, index) => (
-          <ScrollReveal key={product.id} animationDelay={`${index * 100}ms`} className="min-w-[280px] w-[280px] sm:min-w-[320px] sm:w-[320px] shrink-0 snap-start">
+          <ScrollReveal key={product.id} animationDelay={`${index * 100}ms`} className="min-w-[280px] w-[280px] sm:min-w-[320px] sm:w-[320px] shrink-0 snap-center sm:snap-start">
             <div className="glass-panel rounded-2xl overflow-hidden hover:translate-y-[-4px] hover:shadow-[0_32px_72px_rgba(0,0,0,0.52),0_0_48px_rgba(86,189,145,0.08)] transition-all duration-500 h-full flex flex-col relative before:absolute before:inset-[15%] before:-z-10 before:rounded-full before:blur-[48px] before:opacity-0 group-hover:before:opacity-30 before:bg-sf-500 before:transition-opacity">
               
               {/* Clickable Area for Product Detail */}
