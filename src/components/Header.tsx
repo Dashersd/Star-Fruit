@@ -62,20 +62,6 @@ export function Header() {
           )}
         </Link>
       </div>
-
-      {/* Mobile Search Bar */}
-      <div className="md:hidden px-4 pb-4 w-full relative z-10">
-        <div className="relative">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-500" size={16} />
-          <input 
-            type="text" 
-            placeholder="Search ingredients..." 
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-forest-800/50 border border-white/10 rounded-full py-2.5 pl-10 pr-4 text-white placeholder:text-ink-500 text-sm focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all"
-          />
-        </div>
-      </div>
     </header>
   );
 }

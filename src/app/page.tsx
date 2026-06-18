@@ -47,6 +47,18 @@ export default function Home() {
         </p>
       </div>
 
+      {/* Mobile Search Bar */}
+      <div className="md:hidden w-full mb-10 relative">
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-500" size={18} />
+        <input 
+          type="text" 
+          placeholder="Search ingredients..." 
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full bg-forest-800 border border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-white placeholder:text-ink-500 text-base focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 shadow-lg transition-all"
+        />
+      </div>
+
       {/* Category Filter Pills */}
       <div className="mb-12 flex overflow-x-auto gap-3 pb-2 hide-scrollbar">
         {categories.map(category => (
