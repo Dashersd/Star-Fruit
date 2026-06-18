@@ -47,15 +47,15 @@ export default function Home() {
         </p>
       </div>
 
-      {/* Mobile Search Bar */}
-      <div className="md:hidden w-full mb-10 relative">
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-500" size={18} />
+      {/* Global Search Bar */}
+      <div className="w-full max-w-2xl mx-auto mb-12 relative">
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-500" size={20} />
         <input 
           type="text" 
           placeholder="Search ingredients..." 
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full bg-forest-800 border border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-white placeholder:text-ink-500 text-base focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 shadow-lg transition-all"
+          className="w-full bg-forest-800 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-ink-500 text-lg focus:outline-none focus:border-gold/50 focus:ring-2 focus:ring-gold/50 shadow-lg transition-all"
         />
       </div>
 

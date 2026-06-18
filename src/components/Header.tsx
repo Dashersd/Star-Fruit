@@ -38,18 +38,6 @@ export function Header() {
           </span>
         </Link>
         
-        {/* Global Search Bar (Desktop) */}
-        <div className="hidden md:flex flex-1 max-w-xl mx-8 relative">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-500" size={16} />
-          <input 
-            type="text" 
-            placeholder="Search ingredients..." 
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-forest-800/50 border border-white/10 rounded-full py-2 pl-10 pr-4 text-white placeholder:text-ink-500 text-sm focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all"
-          />
-        </div>
-        
         <Link 
           href="/cart" 
           className={`relative p-3 text-ink-300 hover:text-gold transition-colors rounded-full hover:bg-white/5 ${isShaking ? 'animate-cart-shake text-gold' : ''}`}
