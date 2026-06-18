@@ -8,7 +8,7 @@ import { CarouselSection } from '@/components/CarouselSection';
 import { useSearch } from '@/context/SearchContext';
 
 export default function Home() {
-  const { searchQuery } = useSearch();
+  const { searchQuery, setSearchQuery } = useSearch();
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const categories = ['All', ...Array.from(new Set(mockProducts.map(p => p.category)))];
